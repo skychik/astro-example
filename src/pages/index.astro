@@ -1,80 +1,72 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Skychik Portal">
-	<main>
-		<h1>Welcome to <span class="text-gradient">My Portal</span></h1>
-		<p class="instructions">
-			My name is Kirill 👨. But you can know me as <strong>skychik</strong>. Check out my socials
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://github.com/skychik"
-				title="GitHub"
-				body="Plan to have more test projects there 🚀"
-			/>
-			<Card
-				href="https://www.linkedin.com/in/kirill-esakov-82a867181/"
-				title="LinkedIn"
-				body="Don't do much there, but 'Connect' with everyone I know 😁"
-			/>
-		</ul>
-		<p class="instructions">
-			🚧 Under construction <strong>socials</strong> 🚧
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href=""
-				title="Telegram"
-				body="Thought to have a twitter-like blog with some useful and funny bots 🤖"
-			/>
-		</ul>
-	</main>
+  <main class="m-auto max-w-2xl p-6">
+    <h1 class="text-center font-extrabold text-5xl">
+      Welcome to <span class="text-gradient">My Portal</span>
+    </h1>
+    <p class="instructions my-4">
+      My name is Kirill 👨. But you can know me as <strong>skychik</strong>.
+      Check out my socials
+    </p>
+    <ul role="list" class="link-card-grid">
+      <Card
+        href="https://github.com/skychik"
+        title="GitHub"
+        body="Plan to have more test projects there 🚀"
+      />
+      <Card
+        href="https://www.linkedin.com/in/kirill-esakov-82a867181/"
+        title="LinkedIn"
+        body="Don't do much there, but 'Connect' with everyone I know 😁"
+      />
+    </ul>
+    <h2 class="text-center font-extrabold text-3xl mt-12">
+      🚧 Under construction 🚧
+    </h2>
+    <ul role="list" class="link-card-grid my-4">
+      <Card
+        href=""
+        title="Telegram"
+        body="Thought to have a twitter-like blog with some useful and funny bots 🤖"
+      />
+    </ul>
+  </main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    line-height: 1.6;
+    border: 1px solid rgba(var(--accent), 25%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+  .instructions code {
+    font-size: 0.875em;
+    font-weight: bold;
+    background: rgba(var(--accent), 12%);
+    color: rgb(var(--accent));
+    border-radius: 4px;
+    padding: 0.3em 0.45em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
 </style>
