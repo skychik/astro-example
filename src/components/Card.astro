@@ -2,22 +2,31 @@
 export interface Props {
   title: string;
   body: string;
-  href: string;
+  href?: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href = null, title, body } = Astro.props;
 ---
 
 <li class="link-card">
-  <a href={href}>
-    <h2 class="font-bold">
-      {title}
-      <span>&rarr;</span>
-    </h2>
-    <p>
-      {body}
-    </p>
-  </a>
+  {
+    href ? (
+      <a href={href}>
+        <h2 class="font-bold">
+          {title}
+          <span>&rarr;</span>
+        </h2>
+        <p>{body}</p>
+      </a>
+    ) : (
+      <div>
+        <h2 class="font-bold">
+          {title}
+        </h2>
+        <p>{body}</p>
+      </div>
+    )
+  }
 </li>
 <style>
   .link-card {
@@ -34,7 +43,7 @@ const { href, title, body } = Astro.props;
       0 2px 4px -2px rgba(0, 0, 0, 0.1);
   }
 
-  .link-card > a {
+  .link-card > * {
     width: 100%;
     text-decoration: none;
     line-height: 1.4;
